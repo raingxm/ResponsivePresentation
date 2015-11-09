@@ -19,6 +19,7 @@
 
 		<!-- Code syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link rel="stylesheet" href="css/customer.css">
 
 		<!-- Printing and PDF exports -->
 		<script>
@@ -41,10 +42,8 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1>相应式设计</h1>
-					<p>
-						<small>@zhangxu友情提供</a></small>
-					</p>
+					<h1>响应式设计</h1>
+					<p><small>@zhangxu友情提供</a></small></p>
 				</section>
 
 				<section>
@@ -58,16 +57,19 @@
 					
 					<section>
 						<h2>响应式设计概述</h2>
-						<p>响应式设计是一个网站搭建的实践尝试，他使得每种设备和屏幕尺寸都能很好的工作，而不论是大屏还是小屏，手机或是pc。响应式设计关注于提供每个人一个直观的感受和满足。使得pc和手机用户都能够从中受益。</p>
+						<p class="left">
+							响应式设计是一个网站搭建的实践尝试，他使得每种设备和屏幕尺寸都能很好的工作，而不论是大屏还是小屏，手机或是pc。<br><br>
+							响应式设计关注于提供每个人一个直观的感受和满足。使得pc和手机用户都能够从中受益。
+						</p>
 					</section>
 
 					<section>
 						<h2>两者区别</h2>
-						<p>
-						响应式通常意味着对待任何变化，反应更积极更快。
+						<p class="left">
+							响应式通常意味着对待任何变化，反应更积极更快。
 						</p>
-						<p>
-							自适应往往是应对一个新需求或是情况的被动反应，例如变化
+						<p class="left">
+							自适应往往是应对一个新需求或是情况的被动反应和变化
 						</p>
 					</section>
 				</section>
@@ -84,27 +86,48 @@
 				<section>
 					<section>
 						<h2>流式布局</h2>
-						<p>
-							流式布局，就是用灵活的网格搭建一个网站布局，它可以动态的调整以适应于任何宽度。网格布局使2用相对长度单位，通常是百分比或是em。
+						<p class="left">
+							流式布局，就是用灵活的网格搭建一个网站布局，它可以动态的调整以适应于任何宽度。网格布局使用相对长度单位，通常是百分比或是em。
 						</p>
 					</section>
 					
 					<section>
-						<h2>建议</h2>
-						<p>
-						流式布局不推荐使用固定单位，如px或是英寸。因为屏幕的宽高会随着设备的不同而改变。
-						</p>	
+						<h2>固定布局</h2>
+						<img src="img/fix-width.png" alt="">
+					</section>
+
+					<section>
+						<h2>流式布局</h2>
+						<img src="img/flow.png" alt="">
+					</section>
+
+					<section>
+						<h2>总结</h2>
+						<p class="left">
+							流式布局使用百分比宽度来限定布局元素，这样可以根据客户端分辨率的大小来进行合理的显示
+						</p>
+						<br>
+						<p class="left">
+							一般来说，整体的页面采用百分比布局，在细小的地方依然需要使用像素计算来达到效果。
+						</p>
 					</section>
 				</section>
 
 				<section>
 					<section>
 						<h2>媒体查询</h2>
-						<p>
-							媒体查询是对媒体类型的一个扩展，因为经常发现目标设备自带样式，他为特定的浏览器和设备提供特殊的样式。
+						<p class="left">
+							媒体查询就是向设备提问，如“你是一块屏幕吗？”，然后根据回答来进行处理。
 						</p>	
 					</section>
 					
+					<section>
+						<h2>媒体查询语法</h2>
+						<ul>
+							<li>HTML</li>
+							<li>CSS</li>
+						</ul>
+					</section>
 					<section>
 						<h2>HTML</h2>
 						<pre>
@@ -129,11 +152,68 @@
 				</section>
 
 				<section>
-					<h2>移动第一</h2>
+					<section>
+						<h2>流式媒体</h2>
+					<p class="left">
+						图片，视频以及其他媒体类型需要在视窗改变的情况下，按照比例改变大小。
+					</p>
+					<pre>
+						<code class="hljs" style="word-wrap: break-word;">
+img, video, canvas {
+    max-width: 100%;
+}
+						</code>	
+					</pre>	
+					</section>
+
+					<section>
+						<h2>效果</h2>
+						<img src="img/flow-img.png" height="500px" alt="">
+					</section>
+				</section>
 					
-					
+				<section>
+					<section>
+						<h2>移动第一</h2>
+						<p class="left">
+							移动优先方法是指，先在小视窗加载网站默认样式，然后再添加用媒体查询设置的视窗样式。
+						</p>
+					</section>
+
+					<section>
+						<h2>背后动机</h2>
+						<p class="left">
+							一个移动设备的用户，通常使用小视窗的设备，不应该加载pc机上面的所有样式，之后又加载为移动设备写的样式。
+						</p>
+					</section>
 				</section>
 
+				<section>
+					<section>
+						<h2>实践篇</h2>
+					</section>
+
+					<section>
+						<h2>浮动</h2>
+						<ul>
+							<li>利用float实现 Responsive</li>
+							<li>city demo(demo2)</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>应用响应式的stylesheet</h2>
+						<ul>
+							<li>开发更加便捷</li>
+							<li>city demo(demo3)</li>
+							<li>新首页(demo4)</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<h2>更多实践</h2>
+				</section>
 			</div>
 
 		</div>
